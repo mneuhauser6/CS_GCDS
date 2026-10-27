@@ -10,8 +10,7 @@
 │ Description: Numerous functions that manipulate and interrogate an array  |
 |              of characters. Accessible through a menu.                    |
 └───────────────────────────────────────────────────────────────────────────┘
-""" 
-
+"""
 import random
 
 def reverse(word):
