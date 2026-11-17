@@ -4,7 +4,7 @@
 ├───────────────────────────────────────────────────────────────────────────┤
 │ Name: Max Neuhauser                                                       │
 | Course: CS2                                                               |
-│ Log: 1.0 MN                                                               |
+│ Log: 1.1 MN                                                               |
 | Bugs: Program does not work if input contains a title, program also does  │
 │       not work if there is numbers or special characters                  │
 │ Description: Numerous functions that manipulate and interrogate an array  |
@@ -13,13 +13,11 @@
 """ 
 
 import random
-name = input("Hello! What is your full name? ")
-print(f"Welcome {name}")
-
+        
 def reverse(name):
     '''
-    Reverses any word the user inputs
-
+    Description:
+        Reverses any word the user inputs
     Arg:
         name (str): Asks for the users first and last name
     Return:
@@ -30,15 +28,15 @@ def reverse(name):
  
 def count_vowels(name):
     '''
-    Determines the number of vowels in the users input
-
+    Description:
+        Determines the number of vowels in the users input
     Arg:
         name (str): Asks for the users first and last name
     Return:
         total (int): the amount of times a vowel appeared in the users input
     '''
-    vowels = ["a", "e", "i", "o", "u"]
-    total = 0
+    vowels = ["a", "e", "i", "o", "u"]                      # Defines what vowels consist of 
+    total = 0                                               # Counter for the amount of vowels in the users input 
 
     lower_any = convert_lowercase(name)
 
@@ -49,16 +47,16 @@ def count_vowels(name):
 
 def consonant_frequency(name):
     '''
-    counts the amount of time consonants appear in a users input
-
+    Description:
+        Counts the amount of time consonants appear in a users input
     Arg:   
         name (str): Asks for the users first and last name
     Return:
         total (int): the amount of times a consonant appeared in the users input
     '''
-    consonants = ["b","c", "d" ,"f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
-    total = 0
-    lower_word = convert_lowercase(name)
+    consonants = ["b","c", "d" ,"f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"] # Defines what consonants consist of
+    total = 0                                               # Counter for the amount of consonants in the users input
+    lower_word = convert_lowercase(name)                    # Converts the users input into complete lowercase
     for i in lower_word:                        
         if i in consonants:
             total += 1
@@ -66,8 +64,8 @@ def consonant_frequency(name):
 
 def get_first_name(name):
     '''
-    Returns the users first name
-
+    Description:
+        Returns the users first name
     Arg:
         name (str): Asks for the users first and last name
     Return:
@@ -78,8 +76,8 @@ def get_first_name(name):
 
 def get_last_name(name):
     '''
-    Returns the users last name 
-
+    Description:
+        Returns the users last name 
     Arg:
         name (str): Asks for the users first and last name
     Return:
@@ -90,15 +88,15 @@ def get_last_name(name):
 
 def get_middle_name(name):
     '''
-    Returns the users middle name(s)
-
+    Description:
+        Returns the users middle name(s)
     Arg:
         name (str): Asks for the users first and last name
     Return:
         middle_name (str): the users middle name(s), excludes first and last name
         "You have no middle name" (str): only appicable if the users input is 2 or less (demonstrating that there is no middle name, only first and last)
     '''
-    names = name.split()
+    names = name.split()                                    
     length = len(names)
     if length > 2:
         middle_name = ""
@@ -114,8 +112,8 @@ def get_middle_name(name):
 
 def look_for_hyphen(name):
     '''
-    return boolean if last name contains a hyphen
-
+    Description:
+        Return boolean if last name contains a hyphen
     Arg:
         name (str): Asks for the users first and last name 
     Returns:
@@ -129,8 +127,8 @@ def look_for_hyphen(name):
 
 def convert_lowercase(name):
     '''
-    converts any input into lowercase letters
-
+    Description:
+        Converts any input into lowercase letters
     Arg:
         name (str): Asks for the users first and last name
     Return:
@@ -147,8 +145,8 @@ def convert_lowercase(name):
 
 def convert_uppercase(name):
     '''
-    converts any input into uppercase letters
-
+    Description:
+        Converts any input into uppercase letters
     Arg:
         name (str): Asks for the users first and last name 
     Return:
@@ -166,16 +164,16 @@ def convert_uppercase(name):
 
 def random_name(name):
     '''
-    Asks for the users name and then mixes up the letters 
-
+    Description:
+        Asks for the users name and then mixes up the letters 
     Arg:
         name (str): Asks for the users first and last name 
     Return:
         output (str): array of the new randomly sorted characters
     '''
-    output = ""
+    output = ""                                             # Empty array to hold the new output --> CHECK THIS W OLIVIA
     characters = list(name)
-    while len(characters) > 0:                              # While the length of the list is greater than 0 (is there are still characters from the users input left in the list)
+    while len(characters) > 0:                              # While the length of the list is g=`reater than 0 (is there are still characters from the users input left in the list)
         r = random.randint(0, len(characters)-1)            # Choose a random character in the length of the the list between 0 and -1 (the start and end of the list)
         output = output + characters[r]                     # Update the output by adding the random character (r) chosen in the step before
         del characters[r]                                   # Delete the random character chosen from the original list of the users input
@@ -183,8 +181,8 @@ def random_name(name):
 
 def if_palindrome(name):
     '''
-    Check if the users first name is a palindrome 
-    
+    Description:
+        Check if the users first name is a palindrome 
     Arg:
         name (str): Asks for the users first and last name
     Returns:
@@ -200,8 +198,8 @@ def if_palindrome(name):
 
 def get_initials(name):
     '''
-    Asks for the users fullname and returns their initials
-
+    Description:
+        Asks for the users fullname and returns their initials
     Arg:
         name (str): Asks for the users first and last name
     Return:
@@ -216,6 +214,17 @@ def get_initials(name):
 
 def main():
     ''''''
+    while True:
+        accept = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+        name = input("Hello! What is your full name? ")
+        for i in name.lower():
+            if i not in accept:
+                print("Enter a valid input for name that only contains letters")
+                break                                       # if input was invalid, break the for loop and restart the while True loop, if not, continue to the else statement
+        else:
+            print(f"Welcome {name}")
+            break
+
     while True:
         choice = input("What would you like to do with your name? \n Would you like to: \n 1. Reverse word \n 2. Determine the number of vowels \n 3. Determine the amount of consonants \n 4. Return first name \n 5. Return last name \n 6. Return middle name(s) \n 7. Check if last name contains a hyphen \n 8. Convert input to lowercase \n 9. Convert input to uppercase \n 10. Modify array to create a random name \n 11. Check if first name is a palindrome \n 12. Make initials from name \n type 'q' to break code at any time \n" )
         if choice == "1":
